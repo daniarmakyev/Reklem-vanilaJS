@@ -1,0 +1,160 @@
+.body {
+    background: rgb(242, 242, 242);
+    color: #65665C;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container  {
+    max-width: 1360px !important;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header .container{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header hr {
+    background: rgb(229, 229, 229);
+    height: 2px;
+    border: none;
+}
+
+.logo {
+    margin-right: 200px;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.header-mini-buttons {
+    margin-left: 40px;
+    display: inline-block;
+}
+
+.header-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.15);
+    margin-right: 28px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.header-icon:active {
+    box-shadow: none;
+    box-shadow: inset 4px 4px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.edit-header {
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.15);
+    border: none;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 0;
+    width: 162px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+.edit-header:active {
+    box-shadow: none;
+    box-shadow: inset 8px 8px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.edit-header span {
+    position: absolute;
+    top: 13px;
+    right: 50px;
+}
+
+.edit-header svg {
+    position: absolute;
+    right: 33px;
+    top: 16px;
+}
+
+.interactive {
+    margin-top: 90px;
+    height: 620px;
+    background-image: url(../img/interactive.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.text-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.interactive h1 {
+    width: 506px;
+    height: 88px;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+}
+
+.interactive p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 448px;
+    height: 40px;
+    margin-top: 44px;
+}
+
+.interactive-btn {
+    background: rgb(16, 187, 135);
+    box-shadow: 0px 9px 25px -4px rgba(72, 123, 108, 0.5);
+    border-radius: 10px;
+    padding: 12px 30px 12px 30px;
+    margin-top: 25px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+
+.interactive-btn:active {
+    box-shadow: none;
+    box-shadow: inset 12px 12px 10px -7px rgba(0, 0, 0, 0.25);
+}
