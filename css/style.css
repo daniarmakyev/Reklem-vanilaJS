@@ -1,6 +1,7 @@
 .body {
     background: rgb(242, 242, 242);
     color: #65665C;
+    user-select: none;
 }
 
 *,
@@ -72,6 +73,16 @@
     cursor: pointer;
 }
 
+.user-header {
+    position: relative;
+}
+
+.user-header svg{
+    position: absolute;
+    top: 13px;
+    left: 14px;
+}
+
 .header-icon:active {
     box-shadow: none;
     box-shadow: inset 4px 4px 10px -7px rgba(0, 0, 0, 0.25);
@@ -88,6 +99,7 @@
     width: 162px;
     height: 40px;
     cursor: pointer;
+
 
 }
 
@@ -157,4 +169,196 @@
 .interactive-btn:active {
     box-shadow: none;
     box-shadow: inset 12px 12px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.close{
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+}
+
+.wrapper {
+    max-width: 40px;
+}
+
+.close:after{
+    content: '';
+    left: 15px;
+    right: 15px;
+    height: 1px;
+
+    background: #ebebeb;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+}
+
+.close:hover:after{
+    left: 40%;
+    right: 40%;
+}
+
+.popup{
+    display: none ;
+    pointer-events: none;
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    top: 25%;
+    left: 39.5%;
+    z-index: 4;
+
+    transition: all 0.2s ease
+}
+
+.modal-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    pointer-events: none;
+    transition: 0.8s;
+}
+
+.popup-inside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 0 black;
+    transition:
+    box-shadow 0.5s ease 0.7s,
+    border-radius 0.35s ease 0.7s;
+}
+
+.background{
+    --offset: 0;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #504bff, #4cfa63);
+    transform: scale(0);
+    transition: all 0.5s ease 0s;
+    border-radius: 50%;
+}
+
+.background2{
+    --offset: 10%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #6665ff, #69fa7f);
+    transform: scale(0);
+    transition: all 0.5s ease 0.1s;
+}
+
+.background3{
+    --offset: 20%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #8583ff, #85fa99);
+    z-index: 2;
+    transition: all 0.5s ease 0.2s;
+}
+
+.background4{
+    --offset: 30%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #aaaaff, #a7fab7);
+    z-index: 3;
+    transition: all 0.5s ease 0.3s;
+}
+
+.background5{
+    --offset: 40%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: linear-gradient(to right, #c9c8ff, #c3fad1);
+    z-index: 4;
+    transition: all 0.5s ease 0.4s;
+}
+
+.background6{
+    --offset: 40%;
+    position: absolute;
+    left: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    top: var(--offset);
+    background: white;
+    z-index: 5;
+    transition: all 0.8s ease 0.4s;
+}
+
+.content{
+    opacity: 0;
+    transition: all 0.35s ease 0.75s;
+    z-index: 10;
+}
+
+.content-wrapper{
+    text-align: center;
+}
+
+.content-wrapper input {
+    width: 300px;
+    display: block;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 12px 12px 10px -7px rgba(0, 0, 0, 0.25);
+    margin-left: 52px;
+    margin-top: 15px;
+}
+
+.content-wrapper {
+    padding-top: 30px;
+}
+
+.content-wrapper input:focus-visible {
+    border: none;
+    outline: none;
+    
+}
+
+body.active .content{
+    opacity: 1;
+    transform: none;
+}
+
+body.active .popup{
+    opacity: 1;
+    visibility: visible;
+}
+
+body.active .popup-inside{
+    border-radius: 0;
+    box-shadow: -50px 0 200px -50px #504bff, 50px 0 200px -50px #4cfa63;
+}
+
+body.active .background{
+    transform: scale(1);
+}
+
+body.active .background6{
+    transform: scale(8);
 }
