@@ -1,20 +1,14 @@
 {
   "users": [
     {
-      "username": "petyya_",
-      "email": "petya@email.xn--com-hddaaaa",
-      "number": "dasda",
-      "specialization": "dasdaыфвфывф",
-      "address": "dasdasвыфвф",
-      "password": 12345678,
-      "Site": "ывфыв",
-      "FullName": "dsada",
-      "id": 1
-    },
-    {
-      "username": "Elmar",
-      "email": "ElmarMc@gmail.com",
-      "password": "123456789",
+      "username": "daniar",
+      "email": "daniar@gmail.com",
+      "number": "",
+      "specialization": "",
+      "address": "1234567823131",
+      "password": "1232435465",
+      "Site": "",
+      "FullName": "",
       "id": 2
     }
   ]
