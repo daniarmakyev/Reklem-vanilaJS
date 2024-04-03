@@ -45,6 +45,24 @@
     margin-right: 200px;
 }
 
+.name::first-letter {
+    text-transform: uppercase;
+}
+
+.name {
+    text-decoration: underline !important;
+    text-decoration-color: rgb(255, 166, 48) !important;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px; 
+    display: none; 
+    position: absolute;
+    width: 311px;
+    height: 44px;
+    top: 170px;
+    left: 350px;
+}
+
 .nav ul{
     list-style: none;
     display: flex;
@@ -84,6 +102,33 @@
     position: absolute;
     top: 13px;
     left: 14px;
+}
+
+.header-icon-personal {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.15);
+    margin-right: 28px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.user-header-personal {
+    position: relative;
+    display: none;
+}
+
+.user-header-personal:active {
+    box-shadow: none;
+    box-shadow: inset 4px 4px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.user-header-personal svg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 .header-icon:active {
@@ -216,6 +261,29 @@
     box-shadow: none;
     box-shadow: inset 20px 20px 10px -7px rgba(0, 0, 0, 0.25);
 }
+
+.sign-in{
+    cursor: pointer;
+    position: absolute;
+    font-size: 16px;
+    background-color: rgb(16, 187, 135);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px 0px rgba(72, 123, 108);
+    padding: 5px 10px;
+    bottom: 200px;
+    right: 174px;
+}
+.sign-in:active {
+    box-shadow: none;
+    box-shadow: inset 20px 20px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.login-close {
+    bottom: 160px;
+}
+
 .wrapper {
     max-width: 40px;
 }
@@ -391,6 +459,14 @@
     margin-left: 40px;
 }
 
+.content-wrapper a {
+    color: black;
+    position: absolute;
+    bottom: 5px;
+    font-size: 13px;
+    left: 95px;
+}
+
 body.active .content{
     opacity: 1;
     transform: none;
@@ -413,4 +489,10 @@ body.active .background{
 body.active .background6{
     transform: scale(8);
 }
+#login-content {
+    display: none;
+}
 
+#reg-content {
+    display: block;
+}

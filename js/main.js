@@ -1,30 +1,62 @@
-
+//MODAL
 const userHeader = document.querySelector('.user-header');
+const userHeaderPersonal = document.querySelector('.user-header-personal')
 const popup = document.querySelector('.popup');
 const closeBtn = document.querySelector('.close');
 const body = document.querySelector('body');
 const modalBg = document.querySelector('.modal-bg');
+
+// SIGN UP
+const signUp = document.querySelector('.sign-up')
 const regNameInp = document.querySelector('#reg-name-inp');
 const regMailInp = document.querySelector('#reg-email-inp');
 const regPaswordInp = document.querySelector('#reg-password-inp');
 const regConfirmPaswordInp = document.querySelector('#reg-confirm-password-inp');
-const signUp = document.querySelector('.sign-up')
+const regSwaper = document.querySelector('#reg-swaper');
+const regWindow = document.querySelector('#reg-content')
 
+// SIGN IN
+const signIn = document.querySelector('.sign-in')
+const loginMailInp = document.querySelector('#login-email-inp');
+const loginPaswordInp = document.querySelector('#login-password-inp');
+const loginSwaper = document.querySelector('#login-swaper')
+const loginWindow = document.querySelector('#login-content')
+const loginCloseBtn = document.querySelector('.login-close');
+const exit = document.querySelector('.exit')
+const userName = document.querySelector('.name')
 
 userHeader.addEventListener('click', () => {
     popup.style.display = 'flex';
     popup.style.zIndex = '4'
     popup.style.pointerEvents = 'all';
     modalBg.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    
 });
 
-closeBtn.addEventListener('click', () => {
-    modalBg.style.backgroundColor = '';
+loginCloseBtn.addEventListener('click', () => {
+    modalBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    modalBg.style.position = '';
     setTimeout(() => {
         popup.style.zIndex = '-1';
     }, 1500);
 });
+
+closeBtn.addEventListener('click', () => {
+    modalBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    modalBg.style.position = '';
+    setTimeout(() => {
+        popup.style.zIndex = '-1';
+    }, 1500);
+});
+
+closeBtn.addEventListener('click', () => {
+    regMailInp.value = '';
+    regPaswordInp.value = '';
+})
+
+loginCloseBtn.addEventListener('click', () => {
+    loginMailInp.value = '';
+    loginPaswordInp.value = '';
+})
 
 async function getQuery(endpoint) {
     const res = await fetch(`http://localhost:8000/${endpoint}`);
@@ -38,6 +70,25 @@ async function getUsers() {
     return data;
   }
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+  window.addEventListener("storage", getName);
+
+  function getName() {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      userName.innerText =  user.username + ' Legenda';
+    } else {
+      userName.innerText = " ";
+    }
+  }
+  getName();
+
+
+
 // CLOSE MODAL
 
 function closeModal(){
@@ -49,9 +100,6 @@ function closeModal(){
 
 // REGISTRATION FUNCTION
 async function registration() {
-    const regNameInp = document.querySelector('#reg-name-inp');
-    const regMailInp = document.querySelector('#reg-email-inp');
-    const regPaswordInp = document.querySelector('#reg-password-inp');
 
     if (!regMailInp.value.trim() || !regPaswordInp.value.trim() || !regNameInp.value.trim() || !regConfirmPaswordInp.value.trim()){
         alert("Some inputs are empty!");
@@ -101,6 +149,72 @@ async function registration() {
     regPaswordInp.value = '';
     regConfirmPaswordInp.value = '';
     closeBtn.click();
+    location.reload()
 }
 closeBtn.addEventListener('click', closeModal)
 signUp.addEventListener('click', registration);
+
+loginSwaper.addEventListener('click' ,() => {
+    regWindow.style.display = 'none'
+    loginWindow.style.display = 'block'
+})
+
+regSwaper.addEventListener('click', () => {
+    regWindow.style.display = 'block'
+    loginWindow.style.display = 'none'
+})
+
+async function login() {
+    if (!loginMailInp.value.trim() || !loginPaswordInp.value.trim()) {
+      alert("Some inputs are empty!");
+      return;
+    }
+  
+    let users = await getUsers();
+  
+    const foundUser = users.find((user) => user.email === loginMailInp.value);
+  
+    if (!foundUser) {
+      alert("User not found!");
+      return;
+    }
+  
+    if (foundUser.password !== loginPaswordInp.value) {
+      alert("Wrong password!");
+      return;
+    }
+  
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ username: foundUser.username, email: foundUser.email })
+    );
+
+    loginMailInp.value = '';
+    loginPaswordInp.value = '';
+    closeBtn.click();
+    getName();
+    location.reload()
+  }
+  
+signIn.addEventListener('click', login) 
+
+
+if (userName.textContent.trim() !== '') {
+    userHeaderPersonal.style.display = 'inline-block';
+    userHeader.style.display = 'none';
+} else {
+    userHeader.style.display = 'inline-block';
+}
+
+exit.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+});
+
+exit.style.display = 'none'
+
+if (userName.textContent.trim() !== '') {
+    exit.style.display = 'inline-block';
+} else {
+    exit.style.display = 'none';
+}
