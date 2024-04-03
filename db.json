@@ -1,19 +1,40 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "username": "petyya_",
+      "email": "petya@email.xn--com-hddaaaa",
+      "number": "dasda",
+      "specialization": "dasdaыфвфывф",
+      "address": "dasdasвыфвф",
+      "Site": "ывфыв",
+      "FullName": "dsada",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "username": "daniar",
+      "email": "daniar@gmail.com",
+      "number": "",
+      "specialization": "",
+      "address": "",
+      "Site": "",
+      "FullName": "",
+      "id": 2
+    },
+    {
+      "username": "Elmar",
+      "email": "ElmarMc@gmail.com",
+      "number": "",
+      "specialization": "",
+      "address": "dsad",
+      "Site": "",
+      "FullName": "",
+      "id": 3
+    },
+    {
+      "username": "Elmar",
+      "email": "ElmarMcc@gmail.com",
+      "password": "123456789",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
