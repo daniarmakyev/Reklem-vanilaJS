@@ -6,35 +6,16 @@
       "number": "dasda",
       "specialization": "dasdaыфвфывф",
       "address": "dasdasвыфвф",
+      "password": 12345678,
       "Site": "ывфыв",
       "FullName": "dsada",
       "id": 1
     },
     {
-      "username": "daniar",
-      "email": "daniar@gmail.com",
-      "number": "",
-      "specialization": "",
-      "address": "",
-      "Site": "",
-      "FullName": "",
-      "id": 2
-    },
-    {
       "username": "Elmar",
       "email": "ElmarMc@gmail.com",
-      "number": "",
-      "specialization": "",
-      "address": "dsad",
-      "Site": "",
-      "FullName": "",
-      "id": 3
-    },
-    {
-      "username": "Elmar",
-      "email": "ElmarMcc@gmail.com",
       "password": "123456789",
-      "id": 4
+      "id": 2
     }
   ]
 }
