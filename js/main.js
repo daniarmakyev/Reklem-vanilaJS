@@ -40,12 +40,17 @@ loginCloseBtn.addEventListener('click', () => {
     }, 1500);
 });
 
-closeBtn.addEventListener('click', () => {
+closeBtn.addEventListener('click', (e) => {
     modalBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     modalBg.style.position = '';
     setTimeout(() => {
         popup.style.zIndex = '-1';
     }, 1500);
+    e.preventDefault()
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
+  
 });
 
 closeBtn.addEventListener('click', () => {
@@ -149,7 +154,9 @@ async function registration() {
     regPaswordInp.value = '';
     regConfirmPaswordInp.value = '';
     closeBtn.click();
-    location.reload()
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
 }
 closeBtn.addEventListener('click', closeModal)
 signUp.addEventListener('click', registration);
@@ -193,7 +200,9 @@ async function login() {
     loginPaswordInp.value = '';
     closeBtn.click();
     getName();
-    location.reload()
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
   }
   
 signIn.addEventListener('click', login) 
@@ -208,7 +217,7 @@ if (userName.textContent.trim() !== '') {
 
 exit.addEventListener('click', () => {
     localStorage.clear();
-    location.reload();
+  setTimeout(location.reload(), 1500);
 });
 
 exit.style.display = 'none'

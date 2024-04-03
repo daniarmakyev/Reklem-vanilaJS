@@ -496,3 +496,20 @@ body.active .background6{
 #reg-content {
     display: block;
 }
+
+#userDataForm ul li{
+    font-size: 14px; font-weight: 600; line-height: 20px; color: rgb(216, 123, 0); margin-bottom: 25px; display: flex;
+    justify-content: space-between;
+    position: relative; 
+}
+
+
+#userDataForm ul li span::after {
+content: "----------------------------------------------";
+position: absolute;
+color: black;
+left: 150px;
+top: 5px;
+}
+
+
