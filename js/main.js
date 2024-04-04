@@ -54,12 +54,19 @@ loginCloseBtn.addEventListener("click", () => {
   }, 1500);
 });
 
-closeBtn.addEventListener("click", () => {
-  modalBg.style.backgroundColor = "rgba(0, 0, 0, 0)";
-  modalBg.style.position = "";
-  setTimeout(() => {
-    popup.style.zIndex = "-1";
-  }, 1500);
+
+closeBtn.addEventListener('click', (e) => {
+    modalBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    modalBg.style.position = '';
+    setTimeout(() => {
+        popup.style.zIndex = '-1';
+    }, 1500);
+    e.preventDefault()
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
+  
+
 });
 
 closeBtn.addEventListener("click", () => {
@@ -160,12 +167,14 @@ async function registration() {
     console.error("Error:", error);
   }
 
-  regNameInp.value = "";
-  regMailInp.value = "";
-  regPaswordInp.value = "";
-  regConfirmPaswordInp.value = "";
-  closeBtn.click();
-  location.reload();
+    regNameInp.value = '';
+    regMailInp.value = '';
+    regPaswordInp.value = '';
+    regConfirmPaswordInp.value = '';
+    closeBtn.click();
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
 }
 closeBtn.addEventListener("click", closeModal);
 signUp.addEventListener("click", registration);
@@ -181,9 +190,38 @@ regSwaper.addEventListener("click", () => {
 });
 
 async function login() {
-  if (!loginMailInp.value.trim() || !loginPaswordInp.value.trim()) {
-    alert("Some inputs are empty!");
-    return;
+
+    if (!loginMailInp.value.trim() || !loginPaswordInp.value.trim()) {
+      alert("Some inputs are empty!");
+      return;
+    }
+  
+    let users = await getUsers();
+  
+    const foundUser = users.find((user) => user.email === loginMailInp.value);
+  
+    if (!foundUser) {
+      alert("User not found!");
+      return;
+    }
+  
+    if (foundUser.password !== loginPaswordInp.value) {
+      alert("Wrong password!");
+      return;
+    }
+  
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ username: foundUser.username, email: foundUser.email })
+    );
+
+    loginMailInp.value = '';
+    loginPaswordInp.value = '';
+    closeBtn.click();
+    getName();
+    setTimeout(() => {
+      location.reload();
+  }, 1200);
   }
 
   let users = await getUsers();
@@ -221,9 +259,10 @@ if (userName.textContent.trim() !== "") {
   userHeader.style.display = "inline-block";
 }
 
-exit.addEventListener("click", () => {
-  localStorage.clear();
-  location.reload();
+
+exit.addEventListener('click', () => {
+    localStorage.clear();
+  setTimeout(location.reload(), 1500);
 });
 
 exit.style.display = "none";
@@ -324,3 +363,17 @@ editForm.addEventListener("submit", async (e) => {
   render();
   closeModal();
 });
+
+
+function handleCheckboxChange(event) {
+
+  if (event.target.classList.contains('password-checkbox')) {
+
+      logindInp.type = event.target.checked ? 'text' : 'password';
+  }
+}
+  
+
+document.body.addEventListener('change', handleCheckboxChange);
+
+
