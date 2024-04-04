@@ -16,28 +16,5 @@
       "password": "12345678",
       "id": 3
     }
-  ],
-  "cards": [
-    {
-      "title": "Наушник",
-      "price": 200,
-      "description": "best",
-      "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
-    },
-    {
-      "title": "Наушник",
-      "price": 400,
-      "description": "the best",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5lCIdT_r0bOleZUepP0VAf-ZP9ASCLjmDvm_lg1c_2w&s",
-      "id": 1
-    },
-    {
-      "title": "Наушник",
-      "price": 500,
-      "description": "the most best",
-      "image": "https://systema.kg/422479-medium_default/naushniki-s-mikrofonom-microlab-g6-gaming-black-red.jpg",
-      "id": 2
-    }
   ]
 }
