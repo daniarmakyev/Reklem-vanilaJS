@@ -227,3 +227,16 @@ if (userName.textContent.trim() !== '') {
 } else {
     exit.style.display = 'none';
 }
+
+
+function handleCheckboxChange(event) {
+
+  if (event.target.classList.contains('password-checkbox')) {
+
+      logindInp.type = event.target.checked ? 'text' : 'password';
+  }
+}
+  
+
+document.body.addEventListener('change', handleCheckboxChange);
+

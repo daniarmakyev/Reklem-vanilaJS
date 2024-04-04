@@ -43,6 +43,7 @@
 
 .logo {
     margin-right: 200px;
+    margin-top: 10px;
 }
 
 .name::first-letter {
@@ -59,7 +60,7 @@
     position: absolute;
     width: 311px;
     height: 44px;
-    top: 170px;
+    top: 150px;
     left: 350px;
 }
 
@@ -171,7 +172,7 @@
 /*---------------------------INTERACTIVE---------------------*/
 
 
-.interactive {
+.interactive1 {
     margin-top: 90px;
     height: 620px;
     background-image: url(../img/interactive.png);
@@ -186,7 +187,7 @@
     text-align: center;
 }
 
-.interactive h1 {
+.interactive1 h1 {
     width: 506px;
     height: 88px;
     font-size: 36px;
@@ -194,7 +195,7 @@
     line-height: 44px;
 }
 
-.interactive p {
+.interactive1 p {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -425,7 +426,7 @@
     text-align: center;
 }
 
-.content-wrapper input {
+.input {
     width: 300px;
     display: block;
     height: 30px;
@@ -512,4 +513,28 @@ left: 150px;
 top: 5px;
 }
 
+.password-checkbox {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
 
+.login-checkbox {
+    position: absolute;
+    top: 120px;
+    right: 54px;
+}
+
+
+/*===================== about us block ====================*/
+
+.about-us {
+    margin-top: 34px;
+}
+
+.nav-link-page
+
+.top-desc p {
+    max-width: 352px;
+    margin-top: 20px;
+}
