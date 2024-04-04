@@ -23,11 +23,8 @@
             <!-- NAVIGATION -->
             <nav class="nav">
                 <ul>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Акции</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
                         <div class="search">
                             <svg width="15.000000" height="15.000000" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs/>
@@ -61,11 +58,6 @@
                 </svg>
                 </button>
             </div>
-            <button class="edit-header"><span>Конструктор</span><svg width="13.000000" height="13.000000" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs/>
-                <path id="Icon" d="M12.24 2.23C12.41 2.06 12.43 1.8 12.3 1.61C12.28 1.58 12.26 1.55 12.24 1.53L10.35 -0.36C10.26 -0.45 10.13 -0.5 10 -0.5C9.94 -0.5 9.89 -0.5 9.83 -0.48C9.76 -0.45 9.7 -0.41 9.64 -0.36L3.49 5.79C3.44 5.85 3.41 5.92 3.39 6L2.72 8.55C2.67 8.72 2.72 8.9 2.85 9.03C2.91 9.09 2.99 9.14 3.08 9.16C3.16 9.18 3.25 9.18 3.33 9.16L5.88 8.49C5.97 8.47 6.05 8.43 6.11 8.36L12.24 2.23ZM11.26 4.74C11.33 6.31 11.27 7.88 11.09 9.44C10.99 10.31 10.28 11.01 9.39 11.11C7.16 11.36 4.84 11.36 2.6 11.11C1.71 11.01 1.01 10.31 0.9 9.44C0.64 7.15 0.64 4.84 0.9 2.55C1.01 1.68 1.71 0.98 2.6 0.88C4.07 0.71 5.56 0.66 7.04 0.71C7.12 0.71 7.19 0.68 7.24 0.63L7.9 -0.03C7.98 -0.11 7.93 -0.25 7.82 -0.26C6.04 -0.36 4.25 -0.31 2.49 -0.12C1.15 0.03 0.07 1.09 -0.09 2.44C-0.37 4.8 -0.37 7.19 -0.09 9.55C0.07 10.9 1.15 11.96 2.49 12.11C4.8 12.36 7.19 12.36 9.5 12.11C10.84 11.96 11.92 10.9 12.08 9.55C12.3 7.7 12.35 5.83 12.23 3.97C12.22 3.86 12.08 3.81 12 3.89L11.34 4.54C11.29 4.59 11.26 4.67 11.26 4.74ZM10 0.7L11.17 1.88L5.5 7.56L3.9 7.98L4.32 6.38L10 0.7Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
-            </svg>
-            </button>
             <div class="exit"  style="cursor: pointer; margin-left: 10px; margin-top: 7px;"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
@@ -93,24 +85,38 @@
                     <div class="content-wrapper">
                         <form action="">
                         <h3>Sign Up</h3>
-                        <input type="text" placeholder="Name" id="reg-name-inp">
-                        <input type="email" placeholder="Email" id="reg-email-inp">
-                        <input type="password" placeholder="password" id="reg-password-inp"> 
-                        <input type="password" placeholder="confirm password" id="reg-confirm-password-inp">
+                        <input type="text" placeholder="Name" id="reg-name-inp" class="input">
+                        <input type="email" placeholder="Email" id="reg-email-inp" class="input">
+                        <input type="password" placeholder="password" id="reg-password-inp" class="input"> 
+                        <input type="password" placeholder="confirm password" id="reg-confirm-password-inp" class="input">
                         <button class="close" onclick="document.body.classList.remove('active')">Close</button>
                         <button class="sign-up" type="submit">Sign Up</button>
                         <a href="#" id="login-swaper">Do you already have an account?</a>
                     </form>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="content" id="edit-content">
+
+                <div class="content-wrapper">
+                    <form action="" id="edit-form">
+                        <h3>Edit Card</h3>
+                        <input type="text" placeholder="Title" name="title" class="input titleInpEdit">
+                        <input type="text" placeholder="Description" name="description" class="input descriptionAreaEdit">
+                        <input type="text" placeholder="Price" name="price" class="input priceInpEdit">
+                        <input type="text" placeholder="Image URL" name="image" class="input imgInpEdit">
+                        <button class="close edit-close" onclick="document.body.classList.remove('active')">Close</button>
+                        <button type="submit" class="save-card">Save Changes</button>   
+                </form>
+                </div>
+        </div>
             <div class="content">
                 <div id="login-content">
                     <div class="content-wrapper">
                         <form action="">
                         <h3>Sign In</h3>
-                        <input type="email" placeholder="Email" id="login-email-inp">
-                        <input type="password" placeholder="password" id="login-password-inp"> 
+                        <input type="email" placeholder="Email" id="login-email-inp" class="input">
+                        <input type="password" placeholder="password" id="login-password-inp" class="input"> 
                         <button class="close login-close" onclick="document.body.classList.remove('active')">Close</button>
                         <button class="sign-in" type="submit">Sign In</button>
                         <a href="#" id="reg-swaper">Still don't have an account?</a>
@@ -119,6 +125,9 @@
                 </div>
             </div>
         </div>
+    </div>
+        </div>
+
 
     <div class="name"></div>
 
@@ -126,81 +135,29 @@
 
 
         <!-- add card -->
-
-           <!-- <form class="addProduct modal" style="display: none">
-      <h3>Add product</h3>
-      <input id="imgInp" type="text" placeholder="URL to image" />
-      <input id="titleInp" type="text" placeholder="Title" />
-      <input id="priceInp" type="text" placeholder="Price" />
-      <input id="categoryInp" type="text" placeholder="Category" />
-      <textarea
-        id="descriptionArea"
-        placeholder="Description"
-        class="descriptions"
-      ></textarea>
-      <button id="addProductBtn" class="glow-on-hover">Add product</button>
-    </form>
-
-    <form class="editProduct modal" style="display: none">
-      <h3>Edit product</h3>
-      <input id="imgInpEdit" type="text" placeholder="URL to image" />
-      <input id="titleInpEdit" type="text" placeholder="Title" />
-      <input id="priceInpEdit" type="text" placeholder="Price" />
-      <input id="categoryInpEdit" type="text" placeholder="Category" />
-      <textarea
-        id="descriptionAreaEdit"
-        placeholder="Description"
-        class="descriptions"
-      ></textarea>
-      <button id="addProductBtn" class="glow-on-hover">Confirm changes</button>
-    </form> -->
-     <a style="font-size: 30px;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link active" aria-current="page" href="#">
-    Add new card
-  </a>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Add card</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <input id="title-inp" type="text" class="form-control mb-3" placeholder="Title" />
-          <input id="price-inp" type="text" class="form-control my-3" placeholder="Price" />
-          <input id="desc-inp" type="text" class="form-control my-3" placeholder="Desc" />
-          <input id="image-inp" type="text" class="form-control" placeholder="Image" />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button id="createBtn" type="submit" class="btn btn-primary">Create product</button>
-          <button id="saveBtn" type="submit" class="btn btn-success">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-   
-
-            <!-- card -->
-            <div class="catalog" style="background: none;">
-                <div class="container2">
-                      
-    </div>
+    <div class="interactive">
+        <div class="container">
+            <div class="top-block">
+                <div class="nav-link-page">
+                    <a href="index.html">Главная /</a><a href="#"></a>
                 </div>
-        <!-- <img
-            src="https://asiastore.kg/image/cache/catalog/airpods/airpodsmax/silver/81thv7solzl._ac_sl1500_-1200x1200.jpg"
-            alt=""
-            class="product-card__image"
-            /> -->
-            <!-- <h3 class="product-card__title">Название товара</h3>
-                <p class="product-card__description">Краткое описание товара</p>
-                <span class="product-card__price">Цена товара</span>
-                <button class="product-card__button">Добавить в корзину</button> -->
-            </div>
 
+                <div class="nav-link-title">
+                    <h1>Каталог</h1>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+             <div class="cards" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+            </div> 
+        </div>
+    </div>
+   
         <script src="./js/main.js"></script>
         <script src="./js/personalArea.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

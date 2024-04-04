@@ -43,7 +43,7 @@
 .logo {
     margin-right: 200px;
     margin-top: 10px;
-
+    margin-left: 300px;
 }
 
 .name::first-letter {
@@ -53,7 +53,7 @@
 .name {
 
   text-decoration: underline !important;
-  text-decoration-color: rgb(222, 250, 10) !important;
+  text-decoration-color: rgb(255, 168, 68) !important;
   font-size: 36px;
   font-weight: 600;
   line-height: 44px;
@@ -73,23 +73,11 @@
   padding-top: 10px;
 }
 
-.nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-  font-weight: 500;
-  
-    text-decoration: underline !important;
-    text-decoration-color: rgb(255, 166, 48) !important;
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 44px; 
-    display: none; 
-    position: absolute;
-    width: 311px;
-    height: 44px;
-    top: 150px;
-    left: 350px;
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .nav ul{
@@ -525,126 +513,13 @@ body.active .background6 {
 
 /* cards */
 
-.container2 {
-  display: flex;
-  width: 1300px;
-  margin: 0 auto;
-  gap: 30px;
-  flex-wrap: wrap;
+.interactive hr{
+    background: rgb(229, 229, 229);
+    height: 2px;
+    border: none;
 }
 
-.product-card {
-  width: 303px;
-  margin: 20px 0px 20px 20px;
-  background-color: rgb(255, 255, 255);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.842);
-  margin-top: 100px;
-}
 
-.product-card:hover {
-  border: 1px solid rgba(177, 1, 1, 0.756);
-  box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.35);
-}
-
-.catalog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 16px;
-  border-radius: 4px;
-}
-
-.product-card__image {
-  /* width: 250px;
-  object-fit: cover;
-  margin-bottom: 16px;
-  height: 250px; */
-  width: 303px;
-  height: 303px;
-  margin: 0;
-  padding: 0;
-  background-color: azure;
-  position: relative;
-}
-
-.product-card__title {
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  margin-left: 20px;
-}
-
-.product-card__description {
-  font-size: 18px;
-  margin-bottom: 16px;
-  margin-left: 20px;
-  padding-top: 10px;
-}
-
-.product-card__price {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  margin-left: 20px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-left: -50px;
-}
-
-.product-card__button {
-  background-color: #0077d8;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.editBtn {
-  text-decoration: none;
-  width: 90px;
-  background-color: #10bb87;
-  color: #fff;
-  border: #0056b3;
-
-  padding: 6px 10px;
-  border-radius: 23px;
-  margin: 10px 10px 10px 60px;
-  transition: 0.1s ease-in;
-  cursor: pointer;
-}
-.editBtn:hover {
-  background-color: #ffd500;
-  color: black;
-  border: none;
-  transition: 0.1s ease-in;
-}
-.deleteBtn {
-  text-decoration: none;
-  width: 90px;
-  background-color: rgb(111, 3, 3);
-  color: white;
-  border: #0056b3;
-  padding: 6px 10px;
-  border-radius: 23px;
-  margin: 0 25px;
-  transition: 0.1s ease-in;
-  cursor: pointer;
-}
-.deleteBtn:hover {
-  background-color: red;
-  color: white;
-  transition: 0.1s ease-in;
-=======
-    display: block;
-}
 
 #userDataForm ul li{
     font-size: 14px; font-weight: 600; line-height: 20px; color: rgb(216, 123, 0); margin-bottom: 25px; display: flex;
@@ -680,10 +555,41 @@ top: 5px;
     margin-top: 34px;
 }
 
-.nav-link-page
+.nav-link-page a {
+    text-decoration: none;
+    color: black;
+}
 
 .top-desc p {
     max-width: 352px;
     margin-top: 20px;
 
+}
+
+.nav-link-title {
+    text-decoration: underline ;
+    text-decoration-color: rgb(255, 168, 68) ;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    width: 311px;
+    height: 44px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* EDIT */
+
+.save-card {
+    cursor: pointer;
+    font-size: 16px;
+    background-color: rgb(16, 187, 135);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-top: 90px;
+    margin-right: 10px;
+    box-shadow: 0px 4px 7px 0px rgba(72, 123, 108);
+    padding: 5px 10px;
 }

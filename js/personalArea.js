@@ -24,7 +24,7 @@ personalIcon.addEventListener('click', async () => {
 
         interactive.innerHTML = `<div class="my-cabinet">
             <div class="container">
-                <p style="margin-top: 30px;><a href="./index.html" style="color: black; text-decoration: none;">Главная</a> / <a href="#" style="color: black; text-decoration: none;">Личный кабинет</a></p>
+                <p style="margin-top: 30px;><a href="index.html" style="color: black; text-decoration: none;">Главная</a> / <a href="#" style="color: black; text-decoration: none;">Личный кабинет</a></p>
             </div> 
             <hr style="margin-top: 80px;"> 
             <div class="container">

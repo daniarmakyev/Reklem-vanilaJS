@@ -5,7 +5,7 @@ const popup = document.querySelector(".popup");
 const closeBtn = document.querySelector(".close");
 const body = document.querySelector("body");
 const modalBg = document.querySelector(".modal-bg");
-
+const popupInside = document.querySelector('.popup-inside')
 // SIGN UP
 const signUp = document.querySelector(".sign-up");
 const regNameInp = document.querySelector("#reg-name-inp");
@@ -27,23 +27,22 @@ const loginCloseBtn = document.querySelector(".login-close");
 const exit = document.querySelector(".exit");
 const userName = document.querySelector(".name");
 
-// --------- add card -------------
-const addBtn = document.querySelector(".add");
-const addProductBtn = document.querySelector("#addProductBtn");
-const addForm = document.querySelector(".addProduct");
-const container2 = document.querySelector(".cards-container");
-const newModal = document.querySelector(".new");
-const imgInp = document.getElementById("imgInp");
-const titleInp = document.getElementById("titleInp");
-const priceInp = document.getElementById("priceInp");
-const categoryInp = document.getElementById("categoryInp");
-const descriptionArea = document.getElementById("descriptionArea");
+//EDIT
+
+const editContent = document.querySelector('#edit-content')
+const saveContent = document.querySelector('.save-card')
+const titleInpEdit = document.querySelector('.titleInpEdit');
+const descriptionAreaEdit = document.querySelector('.descriptionAreaEdit');
+const priceInpEdit = document.querySelector('.priceInpEdit');
+const imgInpEdit = document.querySelector('.imgInpEdit');
+const editClose = document.querySelector('.edit-close')
 
 userHeader.addEventListener("click", () => {
   popup.style.display = "flex";
   popup.style.zIndex = "4";
   popup.style.pointerEvents = "all";
   modalBg.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  editContent.style.display ='none'
 });
 
 loginCloseBtn.addEventListener("click", () => {
@@ -52,6 +51,7 @@ loginCloseBtn.addEventListener("click", () => {
   setTimeout(() => {
     popup.style.zIndex = "-1";
   }, 1500);
+  editContent.style.display ='none'
 });
 
 
@@ -77,6 +77,7 @@ closeBtn.addEventListener("click", () => {
 loginCloseBtn.addEventListener("click", () => {
   loginMailInp.value = "";
   loginPaswordInp.value = "";
+  editContent.style.display ='none'
 });
 
 async function getQuery(endpoint) {
@@ -182,11 +183,13 @@ signUp.addEventListener("click", registration);
 loginSwaper.addEventListener("click", () => {
   regWindow.style.display = "none";
   loginWindow.style.display = "block";
+  editContent.style.display ='none'
 });
 
 regSwaper.addEventListener("click", () => {
   regWindow.style.display = "block";
   loginWindow.style.display = "none";
+  editContent.style.display ='none'
 });
 
 async function login() {
@@ -224,31 +227,7 @@ async function login() {
   }, 1200);
   }
 
-  let users = await getUsers();
 
-  const foundUser = users.find((user) => user.email === loginMailInp.value);
-
-  if (!foundUser) {
-    alert("User not found!");
-    return;
-  }
-
-  if (foundUser.password !== loginPaswordInp.value) {
-    alert("Wrong password!");
-    return;
-  }
-
-  localStorage.setItem(
-    "user",
-    JSON.stringify({ username: foundUser.username, email: foundUser.email })
-  );
-
-  loginMailInp.value = "";
-  loginPaswordInp.value = "";
-  closeBtn.click();
-  getName();
-  location.reload();
-}
 
 signIn.addEventListener("click", login);
 
@@ -274,35 +253,31 @@ if (userName.textContent.trim() !== "") {
 }
 
 // ----------- card -----------------
-const container = document.querySelector(".container2");
+const cards = document.querySelector(".cards");
 
 async function render() {
   try {
     const res = await fetch("http://localhost:8000/cards");
     const data = await res.json();
 
-    container.innerHTML = "";
+    cards.innerHTML = "";
 
     data.forEach((item) => {
-      container.innerHTML += `
-        <div class="product-card">
-          <img src = ${item.image}  alt="" class="product-card__image">
-          <h3 class="product-card__title">${item.title}</h3>
-          <span class="product-card__price">Price: ${item.price}$</span>
-          <p class="product-card__description">Description: ${item.description}</p>
-          <div class="buttons">
-          
-              <a id = ${item.id}
-     data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                 class="editBtn">Edit</a>
-    <a id = ${item.id} class="deleteBtn">Delete</a>
+      cards.innerHTML += `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.image}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <p class="card-text">Описание: ${item.description}</p>
+              <p class="card-text">Цена: ${item.price}</p>
+              <a href="#" class="btn btn-success edit-btn" data-id="${item.id}">Edit</a>
+              <a href="#" class="btn btn-danger delete-btn" data-id="${item.id}">Delete</a>
+            </div>
           </div>
-        </div>
       `;
     });
   } catch (error) {
-    // console.error("Error fetching data:", error);
+    console.error(error);
   }
 }
 
@@ -311,58 +286,76 @@ render();
 // --------- delete -----------
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("delete-btn")) {
-    await fetch(`${" http://localhost:8000/cards"}/${e.target.id}`, {
+    const cardId = e.target.dataset.id;
+    await fetch(`http://localhost:8000/cards/${cardId}`, {
       method: "DELETE",
     });
     render();
   }
 });
 
-// ----------- edit ----------------
+// --------- edit -----------
 
-let id = null;
-
+let productId = null;
+const editForm = document.querySelector("#edit-form");
 document.addEventListener("click", async (e) => {
-  if (e.target.classList.contains("editBtn")) {
-    const cardId = e.target.id;
-    editForm.style.display = "block";
-    overlay.style.display = "block";
+  if (e.target.classList.contains("edit-btn")) {
+    cardId = e.target.dataset.id; 
+    regWindow.style.display = "none";
+    loginWindow.style.display = "none";
+    editContent.style.display ='block';
+    popup.style.pointerEvents = "all";
+    editForm.style.zIndex = "5";
+    popupInside.style.zIndex = "-4";
+    popup.style.zIndex = "4";
+    editContent.style.opacity ='1';
+    modalBg.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     const data = await getQuery(`cards/${cardId}`);
-    titleInp.value = data.title;
-    priceInp.value = data.price;
-    descriptionArea.value = data.description;
-    imgInp.value = data.image;
-    id = cardId;
+    titleInpEdit.value = data.title;
+    priceInpEdit.value = data.price;
+    descriptionAreaEdit.value = data.description;
+    imgInpEdit.value = data.image;
   }
 });
 
 editForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (
-    !titleInp.value.trim() ||
-    !priceInp.value.trim() ||
-    !descInp.value.trim() ||
-    !imgInp.value.trim()
+    !titleInpEdit.value.trim() ||
+    !priceInpEdit.value.trim() ||
+    !descriptionAreaEdit.value.trim() ||
+    !imgInpEdit.value.trim()
   ) {
     alert("Some inputs are empty");
     return;
   }
   const editedObj = {
-    title: titleInp.value,
-    price: priceInp.value,
-    description: descriptionArea.value,
-    image: imgInpEdit.value,
+    title: titleInpEdit.value,
+    price: priceInpEdit.value,
+    description: descriptionAreaEdit.value,
+    image: imgInpEdit.value
   };
-  await fetch(`${" http://localhost:8000/cards"}/${id}`, {
+  console.log(cardId);
+  await fetch(`http://localhost:8000/cards/${cardId}`, {
     method: "PATCH",
     body: JSON.stringify(editedObj),
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
   });
-  render();
-  closeModal();
+  render(); 
+  closeModal(); 
 });
+
+editClose.addEventListener("click", () => {
+  modalBg.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  modalBg.style.position = "";
+  setTimeout(() => {
+    popup.style.zIndex = "-1";
+  }, 1000);
+  editContent.style.display ='none'
+});
+
 
 
 function handleCheckboxChange(event) {
