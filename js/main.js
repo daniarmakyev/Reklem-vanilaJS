@@ -101,7 +101,7 @@ window.addEventListener("storage", getName);
 function getName() {
   let user = JSON.parse(localStorage.getItem("user"));
   if (user) {
-    userName.innerText = user.username + " Legenda";
+    userName.innerText = user.username ;
   } else {
     userName.innerText = " ";
   }

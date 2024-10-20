@@ -8,13 +8,13 @@
       "password": "1232435465sdsa",
       "Site": "asdasdsadsad",
       "FullName": "dasdasddsadas",
-      "id": 2
+      "id": "2"
     },
     {
       "username": "daniar",
       "email": "daniar@gmail.com",
       "password": "12345678",
-      "id": 3
+      "id": "3"
     }
   ],
   "cards": [
@@ -23,42 +23,42 @@
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     },
     {
       "title": "Наушник",
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     },
     {
       "title": "Наушник",
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     },
     {
       "title": "Наушник",
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     },
     {
       "title": "Наушник",
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     },
     {
       "title": "Наушник",
       "price": "200s",
       "description": "best",
       "image": "https://www.myphone.kg/files/media/8/8888.jpg",
-      "id": 0
+      "id": "0"
     }
   ]
 }
