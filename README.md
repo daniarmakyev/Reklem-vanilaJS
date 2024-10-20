@@ -8,8 +8,6 @@
 <img src="./img/CanSHIIT.png" style="width:920px;" />
 
 ## Скрипты
-
-- `npm start` — запуск приложения
 - `npm run server` — запуск JSON Server на порту 8000
 
 
